@@ -7,6 +7,8 @@
 #include <EthernetClient.h>
 #include <EthernetServer.h>
 
+
+//_exp-_exp-_exp-_exp-
 #define GND 7
 #define LED 6
 #define VCC 5
