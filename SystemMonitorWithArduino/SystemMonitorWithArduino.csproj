@@ -42,7 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="OpenHardwareMonitorLib">
-      <HintPath>..\..\LibreHardwareMonitor-master\Bin\Debug\net452\OpenHardwareMonitorLib.dll</HintPath>
+      <HintPath>..\..\openhardwaremonitor\Bin\Debug\OpenHardwareMonitorLib.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
