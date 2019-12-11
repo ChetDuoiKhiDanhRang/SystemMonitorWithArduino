@@ -14,8 +14,6 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
-
-
 namespace SystemMonitorWithArduino
 {
     public partial class FormMain : Form
@@ -109,8 +107,7 @@ namespace SystemMonitorWithArduino
             ComputerAsServerChanged += FormMain_ComputerAsServerChanged;
         }
 
-
-        string keyName = "SystemMonitorWithArduino";
+        readonly string keyName = "SystemMonitorWithArduino";
 
         private void FormMain_Load(object sender, EventArgs e)
         {
@@ -118,11 +115,13 @@ namespace SystemMonitorWithArduino
             eventlog.WriteEntry(Application.ProductName + " ver " + Application.ProductVersion + ": started", EventLogEntryType.Information, eventID);
 
         }
+
         private void FormMain_Shown(object sender, EventArgs e)
         {
             btnStartValue.PerformClick();
             if(StartUp) btnStartNetwork.PerformClick();
         }
+
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
 
@@ -130,11 +129,11 @@ namespace SystemMonitorWithArduino
             thisComputer.Close();
             eventlog.WriteEntry(Application.ProductName + " ver " + Application.ProductVersion + ": close!", EventLogEntryType.Information, eventID);
         }
+
         private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
-
 
         #region Custom events--------------------------------------------------------------------------------------
         private void FormMain_StartUpChanged(object sender, ValueChangedArguments<bool> e)
@@ -358,7 +357,7 @@ namespace SystemMonitorWithArduino
 
         private void txbPort_TextChanged(object sender, EventArgs e)
         {
-            if (!((long.TryParse(txbPort.Text, out long port) && port <= 65535)))
+            if (!((int.TryParse(txbPort.Text, out int port) && port <= 65535)))
             {
                 txbPort.Text = "65535";
                 lblErr.Text = ("Port must be between 1 and 65535!");
@@ -713,7 +712,6 @@ namespace SystemMonitorWithArduino
             }
             txbLogs.SaveFile(path + "\\" + filename, RichTextBoxStreamType.PlainText);
         }
-
         #endregion
     }
 

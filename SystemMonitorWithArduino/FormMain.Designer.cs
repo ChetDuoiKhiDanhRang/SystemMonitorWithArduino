@@ -32,8 +32,18 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.lblErr = new System.Windows.Forms.Label();
+            this.btnClearLogScreen = new System.Windows.Forms.Button();
+            this.btnStopValue = new System.Windows.Forms.Button();
+            this.btnOpenLogFolder = new System.Windows.Forms.Button();
+            this.btnSaveLog = new System.Windows.Forms.Button();
+            this.btnStartValue = new System.Windows.Forms.Button();
+            this.btnShowLogScreen = new System.Windows.Forms.Button();
+            this.picStartWithSystem = new System.Windows.Forms.PictureBox();
+            this.btnCopy = new System.Windows.Forms.Button();
+            this.picAsServer = new System.Windows.Forms.PictureBox();
             this.txbValues = new System.Windows.Forms.TextBox();
             this.txbMAC = new System.Windows.Forms.TextBox();
+            this.btnStartNetwork = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.lblStartup = new System.Windows.Forms.Label();
             this.txbDelayShutdown = new System.Windows.Forms.TextBox();
@@ -51,23 +61,13 @@
             this.tickerGetValues = new System.Windows.Forms.Timer(this.components);
             this.tip = new System.Windows.Forms.ToolTip(this.components);
             this.eventlog = new System.Diagnostics.EventLog();
-            this.btnClearLogScreen = new System.Windows.Forms.Button();
-            this.btnStopValue = new System.Windows.Forms.Button();
-            this.btnOpenLogFolder = new System.Windows.Forms.Button();
-            this.btnSaveLog = new System.Windows.Forms.Button();
-            this.btnStartValue = new System.Windows.Forms.Button();
-            this.btnShowLogScreen = new System.Windows.Forms.Button();
-            this.picStartWithSystem = new System.Windows.Forms.PictureBox();
-            this.btnCopy = new System.Windows.Forms.Button();
-            this.picAsServer = new System.Windows.Forms.PictureBox();
-            this.btnStartNetwork = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.eventlog)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picStartWithSystem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAsServer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eventlog)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -77,6 +77,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer1.IsSplitterFixed = true;
             this.splitContainer1.Location = new System.Drawing.Point(12, 12);
             this.splitContainer1.Margin = new System.Windows.Forms.Padding(1);
             this.splitContainer1.Name = "splitContainer1";
@@ -110,7 +111,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.txbLogs);
-            this.splitContainer1.Size = new System.Drawing.Size(771, 444);
+            this.splitContainer1.Size = new System.Drawing.Size(897, 471);
             this.splitContainer1.SplitterDistance = 350;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 0;
@@ -127,6 +128,150 @@
             this.lblErr.Text = "label4";
             this.lblErr.Visible = false;
             // 
+            // btnClearLogScreen
+            // 
+            this.btnClearLogScreen.BackColor = System.Drawing.Color.Transparent;
+            this.btnClearLogScreen.BackgroundImage = global::SystemMonitorWithArduino.Properties.Resources.clear;
+            this.btnClearLogScreen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnClearLogScreen.FlatAppearance.BorderSize = 0;
+            this.btnClearLogScreen.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnClearLogScreen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnClearLogScreen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClearLogScreen.Location = new System.Drawing.Point(253, 198);
+            this.btnClearLogScreen.Name = "btnClearLogScreen";
+            this.btnClearLogScreen.Size = new System.Drawing.Size(38, 30);
+            this.btnClearLogScreen.TabIndex = 7;
+            this.btnClearLogScreen.UseVisualStyleBackColor = false;
+            this.btnClearLogScreen.Click += new System.EventHandler(this.btnClearLogScreen_Click);
+            // 
+            // btnStopValue
+            // 
+            this.btnStopValue.BackColor = System.Drawing.Color.Transparent;
+            this.btnStopValue.BackgroundImage = global::SystemMonitorWithArduino.Properties.Resources.stop;
+            this.btnStopValue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnStopValue.FlatAppearance.BorderSize = 0;
+            this.btnStopValue.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnStopValue.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnStopValue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStopValue.Location = new System.Drawing.Point(50, 198);
+            this.btnStopValue.Name = "btnStopValue";
+            this.btnStopValue.Size = new System.Drawing.Size(38, 30);
+            this.btnStopValue.TabIndex = 5;
+            this.tip.SetToolTip(this.btnStopValue, "Stop get infor");
+            this.btnStopValue.UseVisualStyleBackColor = false;
+            this.btnStopValue.Click += new System.EventHandler(this.btnStopValue_Click);
+            // 
+            // btnOpenLogFolder
+            // 
+            this.btnOpenLogFolder.BackColor = System.Drawing.Color.Transparent;
+            this.btnOpenLogFolder.BackgroundImage = global::SystemMonitorWithArduino.Properties.Resources.folder;
+            this.btnOpenLogFolder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnOpenLogFolder.FlatAppearance.BorderSize = 0;
+            this.btnOpenLogFolder.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnOpenLogFolder.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnOpenLogFolder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOpenLogFolder.Location = new System.Drawing.Point(118, 198);
+            this.btnOpenLogFolder.Name = "btnOpenLogFolder";
+            this.btnOpenLogFolder.Size = new System.Drawing.Size(38, 30);
+            this.btnOpenLogFolder.TabIndex = 6;
+            this.tip.SetToolTip(this.btnOpenLogFolder, "Open log folder");
+            this.btnOpenLogFolder.UseVisualStyleBackColor = false;
+            this.btnOpenLogFolder.Click += new System.EventHandler(this.btnOpenLogFolder_Click);
+            // 
+            // btnSaveLog
+            // 
+            this.btnSaveLog.BackColor = System.Drawing.Color.Transparent;
+            this.btnSaveLog.BackgroundImage = global::SystemMonitorWithArduino.Properties.Resources.download;
+            this.btnSaveLog.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSaveLog.FlatAppearance.BorderSize = 0;
+            this.btnSaveLog.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnSaveLog.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnSaveLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveLog.Location = new System.Drawing.Point(208, 198);
+            this.btnSaveLog.Name = "btnSaveLog";
+            this.btnSaveLog.Size = new System.Drawing.Size(38, 30);
+            this.btnSaveLog.TabIndex = 7;
+            this.tip.SetToolTip(this.btnSaveLog, "Save log to text file");
+            this.btnSaveLog.UseVisualStyleBackColor = false;
+            this.btnSaveLog.Click += new System.EventHandler(this.btnSaveLog_Click);
+            // 
+            // btnStartValue
+            // 
+            this.btnStartValue.BackColor = System.Drawing.Color.Transparent;
+            this.btnStartValue.BackgroundImage = global::SystemMonitorWithArduino.Properties.Resources.play;
+            this.btnStartValue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnStartValue.FlatAppearance.BorderSize = 0;
+            this.btnStartValue.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnStartValue.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnStartValue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStartValue.Location = new System.Drawing.Point(5, 198);
+            this.btnStartValue.Name = "btnStartValue";
+            this.btnStartValue.Size = new System.Drawing.Size(38, 30);
+            this.btnStartValue.TabIndex = 4;
+            this.tip.SetToolTip(this.btnStartValue, "Get CPU/RAM infor ");
+            this.btnStartValue.UseVisualStyleBackColor = false;
+            this.btnStartValue.Click += new System.EventHandler(this.btnStartValue_Click);
+            // 
+            // btnShowLogScreen
+            // 
+            this.btnShowLogScreen.BackColor = System.Drawing.Color.Transparent;
+            this.btnShowLogScreen.BackgroundImage = global::SystemMonitorWithArduino.Properties.Resources.cs;
+            this.btnShowLogScreen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnShowLogScreen.FlatAppearance.BorderSize = 0;
+            this.btnShowLogScreen.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnShowLogScreen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnShowLogScreen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowLogScreen.Location = new System.Drawing.Point(298, 198);
+            this.btnShowLogScreen.Name = "btnShowLogScreen";
+            this.btnShowLogScreen.Size = new System.Drawing.Size(38, 30);
+            this.btnShowLogScreen.TabIndex = 8;
+            this.tip.SetToolTip(this.btnShowLogScreen, "Show/Hide log screen ");
+            this.btnShowLogScreen.UseVisualStyleBackColor = false;
+            this.btnShowLogScreen.Click += new System.EventHandler(this.btnShowLogScreen_Click);
+            // 
+            // picStartWithSystem
+            // 
+            this.picStartWithSystem.BackColor = System.Drawing.Color.Transparent;
+            this.picStartWithSystem.Image = ((System.Drawing.Image)(resources.GetObject("picStartWithSystem.Image")));
+            this.picStartWithSystem.Location = new System.Drawing.Point(118, 122);
+            this.picStartWithSystem.Name = "picStartWithSystem";
+            this.picStartWithSystem.Size = new System.Drawing.Size(80, 29);
+            this.picStartWithSystem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picStartWithSystem.TabIndex = 7;
+            this.picStartWithSystem.TabStop = false;
+            this.tip.SetToolTip(this.picStartWithSystem, "Auto start with system boot");
+            this.picStartWithSystem.Click += new System.EventHandler(this.picStartWithSystem_Click);
+            // 
+            // btnCopy
+            // 
+            this.btnCopy.BackColor = System.Drawing.Color.Transparent;
+            this.btnCopy.BackgroundImage = global::SystemMonitorWithArduino.Properties.Resources.save;
+            this.btnCopy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCopy.FlatAppearance.BorderSize = 0;
+            this.btnCopy.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnCopy.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCopy.Location = new System.Drawing.Point(163, 198);
+            this.btnCopy.Name = "btnCopy";
+            this.btnCopy.Size = new System.Drawing.Size(38, 30);
+            this.btnCopy.TabIndex = 7;
+            this.tip.SetToolTip(this.btnCopy, "Copy logs to clipboard");
+            this.btnCopy.UseVisualStyleBackColor = false;
+            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
+            // 
+            // picAsServer
+            // 
+            this.picAsServer.BackColor = System.Drawing.Color.Transparent;
+            this.picAsServer.Image = ((System.Drawing.Image)(resources.GetObject("picAsServer.Image")));
+            this.picAsServer.Location = new System.Drawing.Point(118, 93);
+            this.picAsServer.Name = "picAsServer";
+            this.picAsServer.Size = new System.Drawing.Size(80, 29);
+            this.picAsServer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picAsServer.TabIndex = 7;
+            this.picAsServer.TabStop = false;
+            this.tip.SetToolTip(this.picAsServer, "Toggle Server/Client mode");
+            this.picAsServer.Click += new System.EventHandler(this.picAsServer_Click);
+            // 
             // txbValues
             // 
             this.txbValues.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -140,7 +285,7 @@
             this.txbValues.Multiline = true;
             this.txbValues.Name = "txbValues";
             this.txbValues.ReadOnly = true;
-            this.txbValues.Size = new System.Drawing.Size(342, 205);
+            this.txbValues.Size = new System.Drawing.Size(342, 232);
             this.txbValues.TabIndex = 6;
             this.txbValues.WordWrap = false;
             // 
@@ -155,6 +300,25 @@
             this.txbMAC.Size = new System.Drawing.Size(218, 22);
             this.txbMAC.TabIndex = 2;
             this.txbMAC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnStartNetwork
+            // 
+            this.btnStartNetwork.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnStartNetwork.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnStartNetwork.FlatAppearance.BorderColor = System.Drawing.Color.Navy;
+            this.btnStartNetwork.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStartNetwork.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStartNetwork.Image = global::SystemMonitorWithArduino.Properties.Resources.netOFF;
+            this.btnStartNetwork.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnStartNetwork.Location = new System.Drawing.Point(204, 96);
+            this.btnStartNetwork.Name = "btnStartNetwork";
+            this.btnStartNetwork.Size = new System.Drawing.Size(132, 84);
+            this.btnStartNetwork.TabIndex = 3;
+            this.btnStartNetwork.Text = "Start/Stop network";
+            this.btnStartNetwork.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnStartNetwork.UseVisualStyleBackColor = true;
+            this.btnStartNetwork.Click += new System.EventHandler(this.btnStartServer_Click);
             // 
             // label4
             // 
@@ -273,7 +437,7 @@
             this.txbLogs.Name = "txbLogs";
             this.txbLogs.ReadOnly = true;
             this.txbLogs.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.txbLogs.Size = new System.Drawing.Size(414, 442);
+            this.txbLogs.Size = new System.Drawing.Size(540, 469);
             this.txbLogs.TabIndex = 4;
             this.txbLogs.Text = "";
             this.txbLogs.WordWrap = false;
@@ -314,174 +478,11 @@
             // 
             this.eventlog.SynchronizingObject = this;
             // 
-            // btnClearLogScreen
-            // 
-            this.btnClearLogScreen.BackColor = System.Drawing.Color.Transparent;
-            this.btnClearLogScreen.BackgroundImage = global::SystemMonitorWithArduino.Properties.Resources.clear;
-            this.btnClearLogScreen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnClearLogScreen.FlatAppearance.BorderSize = 0;
-            this.btnClearLogScreen.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnClearLogScreen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnClearLogScreen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClearLogScreen.Location = new System.Drawing.Point(253, 198);
-            this.btnClearLogScreen.Name = "btnClearLogScreen";
-            this.btnClearLogScreen.Size = new System.Drawing.Size(38, 30);
-            this.btnClearLogScreen.TabIndex = 7;
-            this.btnClearLogScreen.UseVisualStyleBackColor = false;
-            this.btnClearLogScreen.Click += new System.EventHandler(this.btnClearLogScreen_Click);
-            // 
-            // btnStopValue
-            // 
-            this.btnStopValue.BackColor = System.Drawing.Color.Transparent;
-            this.btnStopValue.BackgroundImage = global::SystemMonitorWithArduino.Properties.Resources.stop;
-            this.btnStopValue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnStopValue.FlatAppearance.BorderSize = 0;
-            this.btnStopValue.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnStopValue.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnStopValue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStopValue.Location = new System.Drawing.Point(48, 198);
-            this.btnStopValue.Name = "btnStopValue";
-            this.btnStopValue.Size = new System.Drawing.Size(38, 30);
-            this.btnStopValue.TabIndex = 5;
-            this.tip.SetToolTip(this.btnStopValue, "Stop get infor");
-            this.btnStopValue.UseVisualStyleBackColor = false;
-            this.btnStopValue.Click += new System.EventHandler(this.btnStopValue_Click);
-            // 
-            // btnOpenLogFolder
-            // 
-            this.btnOpenLogFolder.BackColor = System.Drawing.Color.Transparent;
-            this.btnOpenLogFolder.BackgroundImage = global::SystemMonitorWithArduino.Properties.Resources.folder;
-            this.btnOpenLogFolder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnOpenLogFolder.FlatAppearance.BorderSize = 0;
-            this.btnOpenLogFolder.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnOpenLogFolder.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnOpenLogFolder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOpenLogFolder.Location = new System.Drawing.Point(118, 198);
-            this.btnOpenLogFolder.Name = "btnOpenLogFolder";
-            this.btnOpenLogFolder.Size = new System.Drawing.Size(38, 30);
-            this.btnOpenLogFolder.TabIndex = 6;
-            this.tip.SetToolTip(this.btnOpenLogFolder, "Open log folder");
-            this.btnOpenLogFolder.UseVisualStyleBackColor = false;
-            this.btnOpenLogFolder.Click += new System.EventHandler(this.btnOpenLogFolder_Click);
-            // 
-            // btnSaveLog
-            // 
-            this.btnSaveLog.BackColor = System.Drawing.Color.Transparent;
-            this.btnSaveLog.BackgroundImage = global::SystemMonitorWithArduino.Properties.Resources.download;
-            this.btnSaveLog.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSaveLog.FlatAppearance.BorderSize = 0;
-            this.btnSaveLog.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnSaveLog.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnSaveLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveLog.Location = new System.Drawing.Point(208, 198);
-            this.btnSaveLog.Name = "btnSaveLog";
-            this.btnSaveLog.Size = new System.Drawing.Size(38, 30);
-            this.btnSaveLog.TabIndex = 7;
-            this.tip.SetToolTip(this.btnSaveLog, "Save log to text file");
-            this.btnSaveLog.UseVisualStyleBackColor = false;
-            this.btnSaveLog.Click += new System.EventHandler(this.btnSaveLog_Click);
-            // 
-            // btnStartValue
-            // 
-            this.btnStartValue.BackColor = System.Drawing.Color.Transparent;
-            this.btnStartValue.BackgroundImage = global::SystemMonitorWithArduino.Properties.Resources.play;
-            this.btnStartValue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnStartValue.FlatAppearance.BorderSize = 0;
-            this.btnStartValue.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnStartValue.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnStartValue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStartValue.Location = new System.Drawing.Point(3, 198);
-            this.btnStartValue.Name = "btnStartValue";
-            this.btnStartValue.Size = new System.Drawing.Size(38, 30);
-            this.btnStartValue.TabIndex = 4;
-            this.tip.SetToolTip(this.btnStartValue, "Get CPU/RAM infor ");
-            this.btnStartValue.UseVisualStyleBackColor = false;
-            this.btnStartValue.Click += new System.EventHandler(this.btnStartValue_Click);
-            // 
-            // btnShowLogScreen
-            // 
-            this.btnShowLogScreen.BackColor = System.Drawing.Color.Transparent;
-            this.btnShowLogScreen.BackgroundImage = global::SystemMonitorWithArduino.Properties.Resources.cs;
-            this.btnShowLogScreen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnShowLogScreen.FlatAppearance.BorderSize = 0;
-            this.btnShowLogScreen.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnShowLogScreen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnShowLogScreen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShowLogScreen.Location = new System.Drawing.Point(298, 198);
-            this.btnShowLogScreen.Name = "btnShowLogScreen";
-            this.btnShowLogScreen.Size = new System.Drawing.Size(38, 30);
-            this.btnShowLogScreen.TabIndex = 8;
-            this.tip.SetToolTip(this.btnShowLogScreen, "Show/Hide log screen ");
-            this.btnShowLogScreen.UseVisualStyleBackColor = false;
-            this.btnShowLogScreen.Click += new System.EventHandler(this.btnShowLogScreen_Click);
-            // 
-            // picStartWithSystem
-            // 
-            this.picStartWithSystem.BackColor = System.Drawing.Color.Transparent;
-            this.picStartWithSystem.Image = ((System.Drawing.Image)(resources.GetObject("picStartWithSystem.Image")));
-            this.picStartWithSystem.Location = new System.Drawing.Point(118, 122);
-            this.picStartWithSystem.Name = "picStartWithSystem";
-            this.picStartWithSystem.Size = new System.Drawing.Size(80, 29);
-            this.picStartWithSystem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picStartWithSystem.TabIndex = 7;
-            this.picStartWithSystem.TabStop = false;
-            this.tip.SetToolTip(this.picStartWithSystem, "Auto start with system boot");
-            this.picStartWithSystem.Click += new System.EventHandler(this.picStartWithSystem_Click);
-            // 
-            // btnCopy
-            // 
-            this.btnCopy.BackColor = System.Drawing.Color.Transparent;
-            this.btnCopy.BackgroundImage = global::SystemMonitorWithArduino.Properties.Resources.save;
-            this.btnCopy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCopy.FlatAppearance.BorderSize = 0;
-            this.btnCopy.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnCopy.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCopy.Location = new System.Drawing.Point(163, 198);
-            this.btnCopy.Name = "btnCopy";
-            this.btnCopy.Size = new System.Drawing.Size(38, 30);
-            this.btnCopy.TabIndex = 7;
-            this.tip.SetToolTip(this.btnCopy, "Copy logs to clipboard");
-            this.btnCopy.UseVisualStyleBackColor = false;
-            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
-            // 
-            // picAsServer
-            // 
-            this.picAsServer.BackColor = System.Drawing.Color.Transparent;
-            this.picAsServer.Image = ((System.Drawing.Image)(resources.GetObject("picAsServer.Image")));
-            this.picAsServer.Location = new System.Drawing.Point(118, 93);
-            this.picAsServer.Name = "picAsServer";
-            this.picAsServer.Size = new System.Drawing.Size(80, 29);
-            this.picAsServer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picAsServer.TabIndex = 7;
-            this.picAsServer.TabStop = false;
-            this.tip.SetToolTip(this.picAsServer, "Toggle Server/Client mode");
-            this.picAsServer.Click += new System.EventHandler(this.picAsServer_Click);
-            // 
-            // btnStartNetwork
-            // 
-            this.btnStartNetwork.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnStartNetwork.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnStartNetwork.FlatAppearance.BorderColor = System.Drawing.Color.Navy;
-            this.btnStartNetwork.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStartNetwork.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartNetwork.Image = global::SystemMonitorWithArduino.Properties.Resources.netOFF;
-            this.btnStartNetwork.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnStartNetwork.Location = new System.Drawing.Point(204, 96);
-            this.btnStartNetwork.Name = "btnStartNetwork";
-            this.btnStartNetwork.Size = new System.Drawing.Size(132, 84);
-            this.btnStartNetwork.TabIndex = 3;
-            this.btnStartNetwork.Text = "Start/Stop network";
-            this.btnStartNetwork.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnStartNetwork.UseVisualStyleBackColor = true;
-            this.btnStartNetwork.Click += new System.EventHandler(this.btnStartServer_Click);
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(793, 466);
+            this.ClientSize = new System.Drawing.Size(919, 493);
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -496,9 +497,9 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.eventlog)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picStartWithSystem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAsServer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eventlog)).EndInit();
             this.ResumeLayout(false);
 
         }
