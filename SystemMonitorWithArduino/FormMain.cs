@@ -37,7 +37,6 @@ namespace SystemMonitorWithArduino
             }
         }
 
-
         bool powerSource = true;
         public bool PowerSource
         {
@@ -75,12 +74,10 @@ namespace SystemMonitorWithArduino
             }
         }
 
-
         string CPULoad = "##.##";
         string CPUTemp = "##.##";
         string RAMUsed = "##.##";
         string RAMAvai = "##.##";
-
 
         const int S_BUFFERSIZE = 20;
         const int R_BUFFERSIZE = 1;
@@ -497,10 +494,8 @@ namespace SystemMonitorWithArduino
                 foreach (var item in mcri)
                 {
                     tmp += "Total physical memmory: " + (long.Parse(item["TotalPhysicalMemory"].ToString()) / (1024f * 1024 * 1024)).ToString("00.00") + " GB";
-
                 }
             }
-
             return tmp.Remove(tmp.Length - 1);
         }
 
@@ -680,7 +675,6 @@ namespace SystemMonitorWithArduino
             CPUTemp = GetSensorValue(HardwareType.CPU, SensorType.Temperature, "package");
             RAMUsed = GetSensorValue(HardwareType.RAM, SensorType.Data, "used");
             RAMAvai = GetSensorValue(HardwareType.RAM, SensorType.Data, "avail");
-
         }
 
         private string GetSensorValue(HardwareType HType, SensorType STYpe, string keyword)
@@ -717,14 +711,10 @@ namespace SystemMonitorWithArduino
                 filename = DateTime.Now.ToString("yy.MM.dd_HH.mm.ss") + "_" + i + ".txt";
                 i++;
             }
-
             txbLogs.SaveFile(path + "\\" + filename, RichTextBoxStreamType.PlainText);
         }
 
-
-
         #endregion
-
     }
 
 }
