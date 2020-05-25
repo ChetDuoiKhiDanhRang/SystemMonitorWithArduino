@@ -76,8 +76,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer1.IsSplitterFixed = true;
             this.splitContainer1.Location = new System.Drawing.Point(12, 12);
             this.splitContainer1.Margin = new System.Windows.Forms.Padding(1);
             this.splitContainer1.Name = "splitContainer1";
@@ -112,7 +110,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.txbLogs);
             this.splitContainer1.Size = new System.Drawing.Size(897, 471);
-            this.splitContainer1.SplitterDistance = 350;
+            this.splitContainer1.SplitterDistance = 427;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -285,7 +283,7 @@
             this.txbValues.Multiline = true;
             this.txbValues.Name = "txbValues";
             this.txbValues.ReadOnly = true;
-            this.txbValues.Size = new System.Drawing.Size(342, 232);
+            this.txbValues.Size = new System.Drawing.Size(419, 232);
             this.txbValues.TabIndex = 6;
             this.txbValues.WordWrap = false;
             // 
@@ -297,7 +295,7 @@
             this.txbMAC.Location = new System.Drawing.Point(118, 65);
             this.txbMAC.Name = "txbMAC";
             this.txbMAC.ReadOnly = true;
-            this.txbMAC.Size = new System.Drawing.Size(218, 22);
+            this.txbMAC.Size = new System.Drawing.Size(295, 22);
             this.txbMAC.TabIndex = 2;
             this.txbMAC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -313,7 +311,7 @@
             this.btnStartNetwork.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStartNetwork.Location = new System.Drawing.Point(204, 96);
             this.btnStartNetwork.Name = "btnStartNetwork";
-            this.btnStartNetwork.Size = new System.Drawing.Size(132, 84);
+            this.btnStartNetwork.Size = new System.Drawing.Size(209, 84);
             this.btnStartNetwork.TabIndex = 3;
             this.btnStartNetwork.Text = "Start/Stop network";
             this.btnStartNetwork.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -340,9 +338,8 @@
             // 
             // txbDelayShutdown
             // 
-            this.txbDelayShutdown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txbDelayShutdown.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.txbDelayShutdown.Location = new System.Drawing.Point(118, 157);
+            this.txbDelayShutdown.Location = new System.Drawing.Point(117, 157);
             this.txbDelayShutdown.MaxLength = 5;
             this.txbDelayShutdown.Name = "txbDelayShutdown";
             this.txbDelayShutdown.Size = new System.Drawing.Size(80, 23);
@@ -355,7 +352,7 @@
             // 
             this.txbPort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txbPort.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.txbPort.Location = new System.Drawing.Point(288, 32);
+            this.txbPort.Location = new System.Drawing.Point(365, 32);
             this.txbPort.MaxLength = 5;
             this.txbPort.Name = "txbPort";
             this.txbPort.Size = new System.Drawing.Size(48, 23);
@@ -387,7 +384,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(272, 35);
+            this.label2.Location = new System.Drawing.Point(349, 35);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(10, 15);
             this.label2.TabIndex = 2;
@@ -422,7 +419,7 @@
             this.cmbIPs.ItemHeight = 15;
             this.cmbIPs.Location = new System.Drawing.Point(118, 31);
             this.cmbIPs.Name = "cmbIPs";
-            this.cmbIPs.Size = new System.Drawing.Size(148, 23);
+            this.cmbIPs.Size = new System.Drawing.Size(225, 23);
             this.cmbIPs.TabIndex = 0;
             this.cmbIPs.SelectedIndexChanged += new System.EventHandler(this.cmbIPs_SelectedIndexChanged);
             // 
@@ -437,7 +434,7 @@
             this.txbLogs.Name = "txbLogs";
             this.txbLogs.ReadOnly = true;
             this.txbLogs.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.txbLogs.Size = new System.Drawing.Size(540, 469);
+            this.txbLogs.Size = new System.Drawing.Size(463, 469);
             this.txbLogs.TabIndex = 4;
             this.txbLogs.Text = "";
             this.txbLogs.WordWrap = false;

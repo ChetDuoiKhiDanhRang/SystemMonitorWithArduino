@@ -435,7 +435,7 @@ namespace SystemMonitorWithArduino
         int delayShutDown;
         private void txbDelayShutdown_TextChanged(object sender, EventArgs e)
         {
-            if (txbDelayShutdown.Text.Length > 0 && int.TryParse(txbDelayShutdown.Text, out int delay) && delay <= 315359999)
+            if (txbDelayShutdown.Text.Trim().Length > 0 && int.TryParse(txbDelayShutdown.Text, out int delay) && delay <= 315359999 && delay>=0)
             {
                 delayShutDown = delay;
                 lblErr.Visible = false;
